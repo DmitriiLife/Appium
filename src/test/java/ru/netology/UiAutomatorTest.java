@@ -2,7 +2,6 @@ package ru.netology;
 
 import io.appium.java_client.android.AndroidDriver;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,7 +10,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
-
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UiAutomatorTest {
 
@@ -32,7 +31,7 @@ public class UiAutomatorTest {
 
             driver = new AndroidDriver(remoteUrl, desiredCapabilities);
         }
-
+    @Order(1)
     @Test
     public void firstTest() {
         String text = " ";
@@ -43,6 +42,7 @@ public class UiAutomatorTest {
         Assertions.assertNotEquals(text, mainScreen.textToBeChanged.getText());
     }
 
+    @Order(2)
     @Test
     public void twoTest() {
         String text = "Hey, my friend!";
@@ -52,7 +52,7 @@ public class UiAutomatorTest {
         mainScreen.buttonActivity.click();
         driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, 7);
-        wait.until(ExpectedConditions.elementToBeClickable(By.id("ru.netology.testing.uiautomator:id/text")));
+        wait.until(ExpectedConditions.elementToBeClickable(mainScreen.textBox));
         Assertions.assertEquals(text, mainScreen.textBox.getText());
     }
 

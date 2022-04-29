@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ru.netology.UiAutomatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-27T15:50:55" hostname="192.168.0.106" time="3.168">
+<testsuite name="ru.netology.UiAutomatorTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-04-29T12:54:43" hostname="192.168.0.106" time="4.684">
   <properties/>
-  <testcase name="firstTest()" classname="ru.netology.UiAutomatorTest" time="3.168"/>
+  <testcase name="twoTest()" classname="ru.netology.UiAutomatorTest" time="4.684"/>
   <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[апр. 27, 2022 6:50:55 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
+  <system-err><![CDATA[апр. 29, 2022 3:54:43 PM io.appium.java_client.remote.AppiumCommandExecutor$1 lambda$0
 INFO: Detected dialect: W3C
 ]]></system-err>
 </testsuite>
